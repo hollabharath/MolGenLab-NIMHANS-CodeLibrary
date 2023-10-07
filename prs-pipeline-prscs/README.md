@@ -13,7 +13,7 @@ Before running the pipeline, make sure you have the following prerequisites:
 ` tar -zxvf ldblk_ukbb_eur.tar.gz`
 - Download and preprocess the summary statistics file. Example command:
 
-` zcat pgc-bip2021-all.vcf.tsv.gz | awk 'NR==1 { print "SNP\tA1\tA2\tBETA\tP" } NR>1 && !/^##/ && !/^#/ { print $3, $4, $5, $6, $7 }' | column -t > pgc-bip2021-all.txt`
+` zcat pgc-bip2021-all.vcf.tsv.gz | awk 'NR==1 { print "SNP\tA1\tA2\tBETA\tSE" } NR>1 && !/^##/ && !/^#/ { print $3, $4, $5, $6, $7 }' | column -t > pgc-bip2021-all.txt`
 - GNU parallel installed on your system. If it's not already installed, you can typically install it via your package manager. For example, on Ubuntu, you can use the command: 
 `sudo apt-get install parallel`
 ## Usage
